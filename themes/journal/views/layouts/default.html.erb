@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= h(page_title) %></title>
+    <%= stylesheet_link_tag "/stylesheets/theme/style.min.css", :media => 'all' %>  
+    <%= render 'shared/page_header' %>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+<!--             <ul class="nav nav-pills pull-right">
+                <li><%= link_to(t('.home'), this_blog.base_url)%></li>
+                <li><%= link_to(t('.statuses'), {:controller => 'notes'}) %></li>
+                <%- Page.published.each do |page| %>
+                    <li><%= link_to_permalink(page, page.title) %></li>
+                <%- end %>
+            </ul>        -->     
+            <p class="text-center small">You are reading <%= link_to(this_blog.blog_name, this_blog.base_url) %>, a collection of articles by <a href="http://paradoxcreative.com" target="_blank">Paradox</a>. Happy <%= Time.now.strftime("%A") %>.</p>
+            <!-- <p class='subtitle'><%= this_blog.blog_subtitle %></p>   -->      
+        </div>
+
+        <div class="row marketing">
+            <div class="col-md-12">
+                <%= yield %>
+            </div>
+<!--            <div class="sidebar" class="col-md-4">
+                <%= render_sidebars %>
+            </div> -->
+        </div>
+
+        <footer class="footer">
+            <p class="text-center"><small>© <%= Time.now.year %> Paradox | Created by <a href='http://tyrichards.com'>Ty Richards</a> at <a href='http://paradoxcreative.com'>Paradox</a> | Subscribe to our RSS</small></p>
+        </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Javascript -->
+
+    <!-- Typekit -->
+    <script type="text/javascript" src="//use.typekit.net/uvf8mfd.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>    
+
+</body>
+</html>

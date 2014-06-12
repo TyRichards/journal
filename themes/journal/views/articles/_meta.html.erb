@@ -1,0 +1,6 @@
+<div class='meta'>
+    <p class="text-center muted"><small>
+        <em><%= article.user.nickname %> wrote this on <%= display_date_and_time(article.published_at) %></em>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%= render 'articles/comment_counter', article: article %>
+    </small></p>  
+</div>
+
